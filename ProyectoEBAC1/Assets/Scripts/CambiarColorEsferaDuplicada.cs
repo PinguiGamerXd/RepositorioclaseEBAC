@@ -1,39 +1,30 @@
-using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Burst;
 using UnityEngine;
 
-public class CambiarColorEsfera : MonoBehaviour
+public class CambiarColorEsferaDuplicada : MonoBehaviour
 {
-    public GameObject EsferaPrefab;
-   
-   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        VariablesGlobales.EsferaVariable = true;
+        VariablesGlobales.EsferaDuplicadaVariable = true;
         Color c = new Color(250, 250, 250);
-        EsferaPrefab.GetComponent<MeshRenderer>().material.color = c;
-
+        GetComponent<MeshRenderer>().material.color = c;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-       if(VariablesGlobales.CapsulaVariable && VariablesGlobales.CuboVariable)
+        if (VariablesGlobales.CapsulaVariable || VariablesGlobales.CuboVariable)
         {
-            VariablesGlobales.EsferaVariable = true;
+            VariablesGlobales.EsferaDuplicadaVariable = true;
             Color c = new Color(250, 250, 250);
             GetComponent<MeshRenderer>().material.color = c;
         }
         else
         {
-            VariablesGlobales.EsferaVariable = false;
+            VariablesGlobales.EsferaDuplicadaVariable = false;
             Color c = new Color(0, 0, 0);
             GetComponent<MeshRenderer>().material.color = c;
 
         }
-
     }
 }

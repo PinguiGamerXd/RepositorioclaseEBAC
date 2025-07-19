@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-
-
-    public class CambiarColorCubo : MonoBehaviour
+public class CambiarColorBlancoNegro : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,8 +12,6 @@ using UnityEngine;
     // Update is called once per frame
     void FixedUpdate()
     {
-        //Color c = new Color(Random.value, Random.value, Random.value);
-        //CuboPrefab.GetComponent<MeshRenderer>().material.color = c;
         if (VariablesGlobales.CuboVariable == true)
         {
             Color c = new Color(0, 0, 0);
@@ -31,6 +25,7 @@ using UnityEngine;
             GetComponent<MeshRenderer>().material.color = c;
             VariablesGlobales.CuboVariable = true;
             Debug.Log(VariablesGlobales.CuboVariable);
+
         }
     }
 }
